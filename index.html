@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chess Board</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .custom-container {
+            border: 4px solid #333;
+            display: inline-block;
+
+        }
+
+        .custom-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+        }
+
+        .coin {
+            text-shadow: 0 0 2px #ffffff, 0 0 5px #ffffff;
+            font-size: 52px;
+        }
+
+        .square {
+            font-size: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .white {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .coinwhite {
+            text-shadow: 0 0 2px #000000, 0 0 5px #000000;
+            font-size: 52px;
+
+        }
+
+        .black {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7789b41a4a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="custom-container">
+        <div class="custom-grid">
+
+            <div class="square white" onclick="indexing(0)"><i class="brook coinblack coin fa-solid fa-chess-rook"
+                    style="color: #000000;"></i></div>
+            <div class="square black" onclick="indexing(1)"><i class="bknight coinblack coin fa-solid fa-chess-knight"
+                    style="color: #000000;"></i></div>
+            <div class="square white" onclick="indexing(2)"><i
+                    class="bbishops coinblack coin fa-regular fa-chess-bishop" style="color: #000000;"></i></div>
+            <div class="square black" onclick="indexing(3)"><i class="bking coinblack coin fa-regular fa-chess-king"
+                    style="color: #000000;"></i></div>
+            <div class="square white" onclick="indexing(4)"><i class="bqueen coinblack coin fa-regular fa-chess-queen"
+                    style="color: #000000;"></i></div>
+            <div class="square black" onclick="indexing(5)"><i
+                    class="bbishops coinblack coin fa-regular fa-chess-bishop" style="color: #000000;"></i></div>
+            <div class="square white" onclick="indexing(6)"><i class="bknight coinblack coin fa-solid fa-chess-knight"
+                    style="color: #000000;"></i></div>
+            <div class="square black" onclick="indexing(7)"><i class="brook coinblack coin fa-solid fa-chess-rook"
+                    style="color: #000000;"></i></div>
+
+            <div class="square black" onclick="indexing(8)"><i
+                    class="coinblackpawn coinblack 1 coin black  fa-regular fa-chess-pawn fa-lg "
+                    style="color: #000000;"></i></div>
+            <div class="square white" onclick="indexing(9)"><i
+                    class="coinblackpawn coinblack 2 coin black  fa-regular fa-chess-pawn fa-lg "
+                    style="color: #000000;"></i></div>
+            <div class="square black" onclick="indexing(10)"><i
+                    class="coinblackpawn coinblack 3 coin black  fa-regular fa-chess-pawn fa-lg "
+                    style="color: #000000;"></i></div>
+            <div class="square white" onclick="indexing(11)"><i
+                    class="coinblackpawn coinblack 4 coin black  fa-regular fa-chess-pawn fa-lg "
+                    style="color: #000000;"></i></div>
+            <div class="square black" onclick="indexing(12)"><i
+                    class="coinblackpawn coinblack 5 coin black  fa-regular fa-chess-pawn fa-lg "
+                    style="color: #000000;"></i></div>
+            <div class="square white" onclick="indexing(13)"><i
+                    class="coinblackpawn coinblack 6 coin black  fa-regular fa-chess-pawn fa-lg "
+                    style="color: #000000;"></i></div>
+            <div class="square black" onclick="indexing(14)"><i
+                    class="coinblackpawn coinblack 7 coin black  fa-regular fa-chess-pawn fa-lg "
+                    style="color: #000000;"></i></div>
+            <div class="square white" onclick="indexing(15)"><i
+                    class="coinblackpawn coinblack 8 coin black  fa-regular fa-chess-pawn fa-lg "
+                    style="color: #000000;"></i></div>
+
+            <div class="square white" onclick="indexing(16)"></div>
+            <div class="square black" onclick="indexing(17)"></div>
+            <div class="square white" onclick="indexing(18)"></div>
+            <div class="square black" onclick="indexing(19)"></div>
+            <div class="square white" onclick="indexing(20)"></div>
+            <div class="square black" onclick="indexing(21)"></div>
+            <div class="square white" onclick="indexing(22)"></div>
+            <div class="square black" onclick="indexing(23)"></div>
+
+            <div class="square black" onclick="indexing(24)"></div>
+            <div class="square white" onclick="indexing(25)"></div>
+            <div class="square black" onclick="indexing(26)"></div>
+            <div class="square white" onclick="indexing(27)"></div>
+            <div class="square black" onclick="indexing(28)"></div>
+            <div class="square white" onclick="indexing(29)"></div>
+            <div class="square black" onclick="indexing(30)"></div>
+            <div class="square white" onclick="indexing(31)"></div>
+
+            <div class="square white" onclick="indexing(32)"></div>
+            <div class="square black" onclick="indexing(33)"></div>
+            <div class="square white" onclick="indexing(34)"></div>
+            <div class="square black" onclick="indexing(35)"></div>
+            <div class="square white" onclick="indexing(36)"></div>
+            <div class="square black" onclick="indexing(37)"></div>
+            <div class="square white" onclick="indexing(38)"></div>
+            <div class="square black" onclick="indexing(39)"></div>
+
+            <div class="square black" onclick="indexing(40)"></div>
+            <div class="square white" onclick="indexing(41)"></div>
+            <div class="square black" onclick="indexing(42)"></div>
+            <div class="square white" onclick="indexing(43)"></div>
+            <div class="square black" onclick="indexing(44)"></div>
+            <div class="square white" onclick="indexing(45)"></div>
+            <div class="square black" onclick="indexing(46)"></div>
+            <div class="square white" onclick="indexing(47)"></div>
+
+            <div class="square white" onclick="indexing(48)"><i data-coin-type="coinwhitepawn"
+                    class="coinwhitepawn coinwhite fa-regular fa-chess-pawn fa-lg " style="color: #ffffff;"
+                    id="poiu"></i></div>
+            <div class="square black" onclick="indexing(49)"><i data-coin-type="coinwhitepawn"
+                    class="coinwhitepawn coinwhite fa-regular fa-chess-pawn fa-lg " style="color: #ffffff;"
+                    id="poiu"></i></div>
+            <div class="square white" onclick="indexing(50)"><i data-coin-type="coinwhitepawn"
+                    class="coinwhitepawn coinwhite fa-regular fa-chess-pawn fa-lg " style="color: #ffffff;"
+                    id="poiu"></i></div>
+            <div class="square black" onclick="indexing(51)"><i data-coin-type="coinwhitepawn"
+                    class="coinwhitepawn coinwhite fa-regular fa-chess-pawn fa-lg " style="color: #ffffff;"></i></div>
+            <div class="square white" onclick="indexing(52)"><i data-coin-type="coinwhitepawn"
+                    class="coinwhitepawn coinwhite fa-regular fa-chess-pawn fa-lg " style="color: #ffffff;"></i></div>
+            <div class="square black" onclick="indexing(53)"><i data-coin-type="coinwhitepawn"
+                    class="coinwhitepawn coinwhite fa-regular fa-chess-pawn fa-lg " style="color: #ffffff;"></i></div>
+            <div class="square white" onclick="indexing(54)"><i data-coin-type="coinwhitepawn"
+                    class="coinwhitepawn coinwhite fa-regular fa-chess-pawn fa-lg " style="color: #ffffff;"></i></div>
+            <div class="square black" onclick="indexing(55)"><i data-coin-type="coinwhitepawn"
+                    class="coinwhitepawn coinwhite fa-regular fa-chess-pawn fa-lg " style="color: #ffffff;"></i></div>
+
+            <div class="square black" onclick="indexing(56)"><i class="wrook coin coinwhite fa-solid fa-chess-rook"
+                    style="color: #fffcfc;"></i></div>
+            <div class="square white" onclick="indexing(57)"><i class="wknight coin  coinwhite fa-solid fa-chess-knight"
+                    style="color: #ffffff;"></i></div>
+            <div class="square black" onclick="indexing(58)"><i
+                    class="wbishops coin coinwhite fa-regular fa-chess-bishop" style="color: #ffffff;"></i></div>
+            <div class="square white" onclick="indexing(59)"><i class="coin wking coinwhite fa-regular fa-chess-king"
+                    style="color: #ffffff;"></i></div>
+            <div class="square black" onclick="indexing(60)"><i class="wqueen coin coinwhite fa-regular fa-chess-queen"
+                    style="color: #ffffff;"></i></div>
+            <div class="square white" onclick="indexing(61)"><i
+                    class="wbishops coin coinwhite fa-regular fa-chess-bishop" style="color: #ffffff;"></i></div>
+            <div class="square black" onclick="indexing(62)"><i class="wknight coin  coinwhite fa-solid fa-chess-knight"
+                    style="color: #ffffff;"></i></div>
+            <div class="square white" onclick="indexing(63)"><i class="wrook coin coinwhite fa-solid fa-chess-rook"
+                    style="color: #ffffff;"></i></div>
+
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script>
+        var selectedcoin;
+        var turnflag = true;
+        var moveFlag = false;
+        var tem;
+        var firststparent;
+        var start = 0;
+        let arr = new Array(9);
+
+        for (let i = 0; i < 9; i++) {
+            arr[i] = new Array(19);
+        }
+
+
+
+        function isMoveValid(curr_i, curr_j, move_i, move_j) {
+            console.log(curr_i, curr_j, move_i, move_j);
+
+            const deltaI = Math.abs(move_i - curr_i);
+            const deltaJ = Math.abs(move_j - curr_j);
+
+
+            if ((deltaI === 2 && deltaJ === 1) || (deltaI === 1 && deltaJ === 2)) {
+
+                return true;
+            }
+
+
+            return false;
+        }
+
+
+
+        function checkclass(tag, classname) {
+            return tag.classList.contains(classname);
+        }
+
+        function indexing(position) {
+            let parent = document.getElementsByClassName('square')[position];
+            console.log(position);
+            console.log(parent);
+
+
+            let tem_i = 3, tem_j = 2;
+
+            if (moveFlag == false) {
+                if (parent.firstChild) {
+                    selectedcoin = parent.firstChild;
+                    console.log(selectedcoin);
+                    parent.removeChild(selectedcoin);
+                    tem = position;
+                    firststparent = parent;
+                    moveFlag = true;
+                }
+            } else if (moveFlag == true) {
+                if (parent.hasChildNodes) {
+                    var attackable = parent.firstChild;
+                }
+                if (attackable != null) {
+                    var white_can_cut = checkclass(attackable, 'coinblack');
+                    var black_can_cut = checkclass(attackable, 'coinwhite');
+                }
+                var coinblackpawn;
+                var coinwhitepawn;
+                var wbishops;
+                var bbishops;
+                var brook;
+                var wrook;
+                var queen;
+                var bking;
+                var wknight;
+                var bknight;
+                var wking;
+                var wknight = checkclass(selectedcoin, 'wknight');
+                var bknight = checkclass(selectedcoin, 'bknight');
+                var bking = checkclass(selectedcoin, 'bking');
+                var wking = checkclass(selectedcoin, 'wking')
+                var bpawn = checkclass(selectedcoin, 'coinblackpawn');
+                var wpawn = checkclass(selectedcoin, 'coinwhitepawn');
+                var wbishop = checkclass(selectedcoin, 'wbishops');
+                var bbishop = checkclass(selectedcoin, 'bbishops');
+                var wrook = checkclass(selectedcoin, 'wrook');
+                var brook = checkclass(selectedcoin, 'brook');
+                var wqueen = checkclass(selectedcoin, 'wqueen');
+                var bqueen = checkclass(selectedcoin, 'bqueen');
+
+
+
+
+                if (wknight) {
+                    console.log("Knight selected");
+
+
+                    var curr_i, curr_j;
+                    for (i = 1; i <= 8; i++) {
+                        for (j = 1; j <= 8; j++) {
+                            arr[i][j] = start;
+
+                            if (arr[i][j] == position) {
+                                console.log("dont");
+                                curr_i = i;
+                                console.log(curr_i);
+                                curr_j = j;
+                                console.log(curr_j);
+                            }
+
+                            start++;
+                        }
+                    }
+
+
+                    var possibleMoves = [
+                        [curr_i - 2, curr_j - 1], [curr_i - 2, curr_j + 1],
+                        [curr_i - 1, curr_j - 2], [curr_i - 1, curr_j + 2],
+                        [curr_i + 2, curr_j - 1], [curr_i + 2, curr_j + 1],
+                        [curr_i + 1, curr_j - 2], [curr_i + 1, curr_j + 2]
+                    ];
+
+
+                    var validMoves = [];
+                    for (var i = 0; i < possibleMoves.length; i++) {
+                        var move = possibleMoves[i];
+                        var move_i = move[0];
+                        var move_j = move[1];
+
+
+
+
+                        if (isMoveValid(curr_i, curr_j, move_i, move_j)) {
+                            validMoves.push(move);
+                        }
+                    }
+
+
+                    if (validMoves.length > 0) {
+                        var nextMove = validMoves[0];
+                        var nextPosition = arr[nextMove[0]][nextMove[1]];
+
+                        if (white_can_cut) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+                    } else {
+
+                        firststparent.appendChild(selectedcoin);
+                        moveFlag = false;
+                    }
+                    console.log("Current Position: ", nextPosition, parent, curr_i, curr_j, move_i, move_j);
+                    moveFlag = false;
+                    curr_i = null; curr_j = null;
+                    move_j = null; move_i = null;
+                    deltaJ = null; deltaI = null;
+                    validMoves = null; possibleMoves = null;
+                    console.log("Current Position: ", nextPosition, parent, curr_i, curr_j, move_i, move_j, deltaI, deltaJ, validMoves, possibleMoves, moveFlag);
+
+                }
+
+
+                if (bknight) {
+                    console.log("Knight selected");
+
+
+                    var curr_i, curr_j;
+                    for (i = 1; i <= 8; i++) {
+                        for (j = 1; j <= 8; j++) {
+                            arr[i][j] = start;
+
+                            if (arr[i][j] == position) {
+                                console.log("dont");
+                                curr_i = i;
+                                console.log(curr_i);
+                                curr_j = j;
+                                console.log(curr_j);
+                            }
+
+                            start++;
+                        }
+                    }
+
+
+                    var possibleMoves = [
+                        [curr_i - 2, curr_j - 1], [curr_i - 2, curr_j + 1],
+                        [curr_i - 1, curr_j - 2], [curr_i - 1, curr_j + 2],
+                        [curr_i + 2, curr_j - 1], [curr_i + 2, curr_j + 1],
+                        [curr_i + 1, curr_j - 2], [curr_i + 1, curr_j + 2]
+                    ];
+
+
+                    var validMoves = [];
+                    for (var i = 0; i < possibleMoves.length; i++) {
+                        var move = possibleMoves[i];
+                        var move_i = move[0];
+                        var move_j = move[1];
+                        console.log(move);
+
+
+
+                        if (isMoveValid(curr_i, curr_j, move_i, move_j)) {
+                            validMoves.push(move);
+                        }
+                    } console.log(validMoves);
+
+
+                    if (validMoves.length > 0) {
+                        var nextMove = validMoves[0];
+                        var nextPosition = arr[nextMove[0]][nextMove[1]];
+
+                        if (black_can_cut) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+                    } else {
+
+                        firststparent.appendChild(selectedcoin);
+                        moveFlag = false;
+                    }
+                    console.log("Current Position: ", curr_i, curr_j);
+
+                }
+
+
+                if (bpawn) {
+
+                    console.log("bpawn is working")
+                    if (tem == 8 || tem == 9 || tem == 10 || tem == 11 || tem == 12 || tem == 13 || tem == 14 || tem == 15) {
+                        if (position == tem + 8 || position == tem + 16) {
+                            if (parent.firstChild) {
+                                firststparent.appendChild(selectedcoin);
+                                console.log(selectedcoin);
+                                console.log(parent);
+                                moveFlag = false;
+                            } else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                console.log(selectedcoin);
+                                console.log(parent);
+                                moveFlag = false;
+
+                            }
+                        }
+                        else if (position == tem + 7 || position == tem + 9) {
+
+                            if (black_can_cut) {
+                                console.log("rambo")
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else {
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            moveFlag = false;
+                        }
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+                    else if (position == tem + 8) {
+                        if (parent.firstChild) {
+                            firststparent.appendChild(selectedcoin);
+                            console.log(selectedcoin);
+                            console.log(parent);
+
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            console.log(selectedcoin);
+                            console.log(parent);
+                            moveFlag = false;
+
+                        }
+
+                    }
+                    else if (position == tem + 7 || position == tem + 9) {
+                        if (black_can_cut) {
+                            console.log("lolll");
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        moveFlag = false;
+                    }
+                    else {
+                        firststparent.appendChild(selectedcoin);
+                        moveFlag = false;
+                    }
+                    moveFlag = false;
+
+                }
+
+                if (wpawn) {
+                    console.log("wpawn is working")
+                    if (tem == 48 || tem == 49 || tem == 50 || tem == 51 || tem == 52 || tem == 53 || tem == 54 || tem == 55) {
+                        if (position == tem - 8 || position == tem - 16) {
+                            if (parent.firstChild) {
+                                firststparent.appendChild(selectedcoin);
+                                console.log(selectedcoin);
+                                console.log(parent);
+                                moveFlag = false;
+                            } else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                console.log(selectedcoin);
+                                console.log(parent);
+                                moveFlag = false;
+
+                            }
+                        }
+                        else if (position == tem - 7 || position == tem - 9) {
+
+                            if (white_can_cut) {
+                                console.log("rambo")
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else {
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            moveFlag = false;
+                        }
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+
+
+                    }
+                    else if (position == tem - 8) {
+                        if (parent.firstChild) {
+                            firststparent.appendChild(selectedcoin);
+                            console.log(selectedcoin);
+                            console.log(parent);
+
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            console.log(selectedcoin);
+                            console.log(parent);
+                            moveFlag = false;
+
+                        }
+
+                    }
+                    else if (position == tem - 7 || position == tem - 9) {
+                        if (white_can_cut) {
+                            console.log("lolll");
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        moveFlag = false;
+                    }
+                    else {
+                        firststparent.appendChild(selectedcoin);
+                        moveFlag = false;
+                    }
+                    moveFlag = false;
+
+                }
+                if (brook) {
+                    console.log("rook is working")
+                    if (position == tem + 1 || position == tem + 2 || position == tem + 3 || position == tem + 4 ||
+                        position == tem + 5 || position == tem + 6 || position == tem + 7 || position == tem + 8 ||
+                        position == tem - 1 || position == tem - 2 || position == tem - 3 || position == tem - 4 ||
+                        position == tem - 5 || position == tem - 6 || position == tem - 7 || position == tem - 8) {
+                        if (black_can_cut) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+
+
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+                    else if (position == tem + 8 || position == tem + 16 || position == tem + 24 || position == tem + 32 || position == tem + 40 || position == tem + 48 || position == tem + 56
+                        || position == tem - 8 || position == tem - 16 || position == tem + 24 || position == tem - 32 || position == tem - 40 || position == tem - 48 || position == tem - 56) {
+                        if (black_can_cut) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+
+
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+                    else {
+                        firststparent.appendChild(selectedcoin);
+                        moveFlag = false;
+                    }
+
+                }
+
+                if (wrook) {
+                    console.log("   wrook is working")
+                    if (position == tem + 1 || position == tem + 2 || position == tem + 3 || position == tem + 4 ||
+                        position == tem + 5 || position == tem + 6 || position == tem + 7 || position == tem + 8 ||
+                        position == tem - 1 || position == tem - 2 || position == tem - 3 || position == tem - 4 ||
+                        position == tem - 5 || position == tem - 6 || position == tem - 7 || position == tem - 8) {
+                        if (white_can_cut) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+
+
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+                    else if (position == tem + 8 || position == tem + 16 || position == tem + 24 || position == tem + 32 || position == tem + 40 || position == tem + 48 || position == tem + 56
+                        || position == tem - 8 || position == tem - 16 || position == tem + 24 || position == tem - 32 || position == tem - 40 || position == tem - 48 || position == tem - 56) {
+                        if (white_can_cut) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+
+
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+                }
+
+                if (bbishop) {
+                    console.log("bbishops its working");
+
+
+
+                    if (tem == 0 || tem == 8 || tem == 16 || tem == 24 ||
+                        tem == 32 || tem == 40 || tem == 48 || tem == 56) {
+                        if (position == tem - 7 || position == tem - 14 || position == tem - 21 || position == tem - 28 ||
+                            position == tem - 35 || position == tem - 42 || position == tem - 49 || position == tem + 9 || position == tem + 18 ||
+                            position == tem + 27 || position == tem + 36 || position == tem + 45 || position == tem + 53 || position == tem + 63) {
+                            if (black_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                console.log("bbishops leo its working")
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+
+                        }
+                        else {
+                            console.log("bbishops leo its working")
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+                    else if (tem == 7 || tem == 15 || tem == 23 || tem == 31 ||
+                        tem == 39 || tem == 47 || tem == 55 || tem == 63) {
+                        if (position == tem + 7 || position == tem + 14 || position == tem + 21 || position == tem + 28 ||
+                            position == tem + 35 || position == tem + 42 || position == tem + 49 || position == tem - 9 || position == tem - 18 ||
+                            position == tem - 27 || position == tem - 36 || position == tem - 45 || position == tem - 53 || position == tem - 63) {
+                            if (black_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                console.log("bbishops leo its working")
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+
+                        }
+                        else {
+                            console.log("bbishops leo its working")
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+
+
+
+                    else if (position == tem - 7 || position == tem - 14 || position == tem - 21 || position == tem - 28 ||
+                        position == tem - 35 || position == tem - 42 || position == tem - 49 || position == tem - 9 || position == tem - 18 ||
+                        position == tem - 27 || position == tem - 36 || position == tem - 45 || position == tem - 53 || position == tem - 63 ||
+                        position == tem + 7 || position == tem + 14 || position == tem + 21 || position == tem + 28 ||
+                        position == tem + 35 || position == tem + 42 || position == tem + 49 || position == tem + 9 || position == tem + 18 ||
+                        position == tem + 27 || position == tem + 36 || position == tem + 45 || position == tem + 53 || position == tem + 63) {
+
+                        if (black_can_cut) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+
+
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+
+                }
+
+                if (wbishop) {
+                    console.log("wbishops its working");
+                    if (tem == 0 || tem == 8 || tem == 16 || tem == 24 ||
+                        tem == 32 || tem == 40 || tem == 48 || tem == 56) {
+                        if (position == tem - 7 || position == tem - 14 || position == tem - 21 || position == tem - 28 ||
+                            position == tem - 35 || position == tem - 42 || position == tem - 49 || position == tem + 9 || position == tem + 18 ||
+                            position == tem + 27 || position == tem + 36 || position == tem + 45 || position == tem + 53 || position == tem + 63) {
+                            if (white_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                console.log("wbishops leo its working")
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+
+                        }
+                        else {
+                            console.log("wbishops leo its working")
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+                    else if (tem == 7 || tem == 15 || tem == 23 || tem == 31 ||
+                        tem == 39 || tem == 47 || tem == 55 || tem == 63) {
+                        if (position == tem + 7 || position == tem + 14 || position == tem + 21 || position == tem + 28 ||
+                            position == tem + 35 || position == tem + 42 || position == tem + 49 || position == tem - 9 || position == tem - 18 ||
+                            position == tem - 27 || position == tem - 36 || position == tem - 45 || position == tem - 53 || position == tem - 63) {
+                            if (white_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                console.log("wbishops leo its working")
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+
+                        }
+                        else {
+                            console.log("wbishops leo its working")
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+                    else if (position == tem - 7 || position == tem - 14 || position == tem - 21 || position == tem - 28 ||
+                        position == tem - 35 || position == tem - 42 || position == tem - 49 || position == tem - 9 || position == tem - 18 ||
+                        position == tem - 27 || position == tem - 36 || position == tem - 45 || position == tem - 53 || position == tem - 63 ||
+                        position == tem + 7 || position == tem + 14 || position == tem + 21 || position == tem + 28 ||
+                        position == tem + 35 || position == tem + 42 || position == tem + 49 || position == tem + 9 || position == tem + 18 ||
+                        position == tem + 27 || position == tem + 36 || position == tem + 45 || position == tem + 53 || position == tem + 63) {
+
+                        if (white_can_cut) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+
+
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+                }
+                if (bking) {
+                    if (tem == 0 || tem == 8 || tem == 16 || tem == 24 ||
+                        tem == 32 || tem == 40 || tem == 48 || tem == 56) {
+                        if (position == tem - 7 || position == tem - 8 || position == tem + 1 ||
+                            position == tem + 8 || position == tem + 9) {
+                            if (black_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+
+                        }
+                    }
+                    else if (tem == 7 || tem == 15 || tem == 23 || tem == 31 ||
+                        tem == 39 || tem == 47 || tem == 55 || tem == 63) {
+                        if (position == tem + 7 || position == tem - 8 || position == tem - 1 ||
+                            position == tem - 8 || position == tem - 9) {
+                            if (black_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+
+                        }
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+                    else if (position == tem - 1 || position == tem + 1 || position == tem - 8 || position == tem + 8 ||
+                        position == tem - 7 || position == tem - 9 || position == tem + 7 || position == tem + 9) {
+                        if (black_can_cut) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+
+
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+                    else {
+                        firststparent.appendChild(selectedcoin);
+                        moveFlag = false;
+                    }
+
+                }
+                if (wking) {
+
+                    {
+                        if (tem == 0 || tem == 8 || tem == 16 || tem == 24 ||
+                            tem == 32 || tem == 40 || tem == 48 || tem == 56) {
+                            if (position == tem - 7 || position == tem - 8 || position == tem + 1 ||
+                                position == tem + 8 || position == tem + 9) {
+                                if (white_can_cut) {
+
+                                    parent.removeChild(parent.firstElementChild);
+                                    parent.appendChild(selectedcoin);
+                                    moveFlag = false;
+                                }
+                                else if (!parent.firstChild) {
+                                    parent.appendChild(selectedcoin);
+                                    moveFlag = false;
+
+                                }
+
+
+                                else {
+                                    firststparent.appendChild(selectedcoin);
+                                    moveFlag = false;
+                                }
+
+                            }
+                        }
+                        else if (tem == 7 || tem == 15 || tem == 23 || tem == 31 ||
+                            tem == 39 || tem == 47 || tem == 55 || tem == 63) {
+                            if (position == tem + 7 || position == tem - 8 || position == tem - 1 ||
+                                position == tem - 8 || position == tem - 9) {
+                                if (white_can_cut) {
+
+                                    parent.removeChild(parent.firstElementChild);
+                                    parent.appendChild(selectedcoin);
+                                    moveFlag = false;
+                                }
+                                else if (!parent.firstChild) {
+                                    parent.appendChild(selectedcoin);
+                                    moveFlag = false;
+
+                                }
+
+
+                                else {
+                                    firststparent.appendChild(selectedcoin);
+                                    moveFlag = false;
+                                }
+
+                            }
+                            else {
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                        }
+                        else if (position == tem - 1 || position == tem + 1 || position == tem - 8 || position == tem + 8 ||
+                            position == tem - 7 || position == tem - 9 || position == tem + 7 || position == tem + 9) {
+                            if (white_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                        }
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+                }
+                if (bqueen) {
+
+
+
+                    if (tem == 0 || tem == 8 || tem == 16 || tem == 24 ||
+                        tem == 32 || tem == 40 || tem == 48 || tem == 56) {
+                        if (position == tem - 7 || position == tem - 14 || position == tem - 21 || position == tem - 28 ||
+                            position == tem - 35 || position == tem - 42 || position == tem - 49 || position == tem + 9 || position == tem + 18 ||
+                            position == tem + 27 || position == tem + 36 || position == tem + 45 || position == tem + 53 || position == tem + 63 ||
+                            position == tem + 1 || position == tem + 2 || position == tem + 3 || position == tem + 4 ||
+                            position == tem + 5 || position == tem + 6 || position == tem + 7 || position == tem + 8 ||
+                            position == tem - 1 || position == tem - 2 || position == tem - 3 || position == tem - 4 ||
+                            position == tem - 5 || position == tem - 6 || position == tem - 7 || position == tem - 8 || position == tem + 8 || position == tem + 16 || position == tem + 24 || position == tem + 32 || position == tem + 40 || position == tem + 48 || position == tem + 56
+                            || position == tem - 8 || position == tem - 16 || position == tem + 24 || position == tem - 32 || position == tem - 40 || position == tem - 48 || position == tem - 56) {
+                            if (black_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                console.log("bqueen working")
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+
+                        }
+                        else {
+                            console.log("bqueen working")
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+                    else if (tem == 7 || tem == 15 || tem == 23 || tem == 31 ||
+                        tem == 39 || tem == 47 || tem == 55 || tem == 63) {
+                        if (position == tem + 7 || position == tem + 14 || position == tem + 21 || position == tem + 28 ||
+                            position == tem + 35 || position == tem + 42 || position == tem + 49 || position == tem - 9 || position == tem - 18 ||
+                            position == tem - 27 || position == tem - 36 || position == tem - 45 || position == tem - 53 || position == tem - 63 || position == tem + 1 || position == tem + 2 || position == tem + 3 || position == tem + 4 ||
+                            position == tem + 5 || position == tem + 6 || position == tem + 7 || position == tem + 8 ||
+                            position == tem - 1 || position == tem - 2 || position == tem - 3 || position == tem - 4 ||
+                            position == tem - 5 || position == tem - 6 || position == tem - 7 || position == tem - 8 || position == tem + 8 || position == tem + 16 || position == tem + 24 || position == tem + 32 || position == tem + 40 || position == tem + 48 || position == tem + 56
+                            || position == tem - 8 || position == tem - 16 || position == tem + 24 || position == tem - 32 || position == tem - 40 || position == tem - 48 || position == tem - 56) {
+                            if (black_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                console.log("bqueen is working")
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+
+                        }
+                        else {
+                            console.log("bqueen its working")
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+
+
+
+                    else if (position == tem - 7 || position == tem - 14 || position == tem - 21 || position == tem - 28 ||
+                        position == tem - 35 || position == tem - 42 || position == tem - 49 || position == tem - 9 || position == tem - 18 ||
+                        position == tem - 27 || position == tem - 36 || position == tem - 45 || position == tem - 53 || position == tem - 63 ||
+                        position == tem + 7 || position == tem + 14 || position == tem + 21 || position == tem + 28 ||
+                        position == tem + 35 || position == tem + 42 || position == tem + 49 || position == tem + 9 || position == tem + 18 ||
+                        position == tem + 27 || position == tem + 36 || position == tem + 45 || position == tem + 53 || position == tem + 63 || position == tem + 1 || position == tem + 2 || position == tem + 3 || position == tem + 4 ||
+                        position == tem + 5 || position == tem + 6 || position == tem + 7 || position == tem + 8 ||
+                        position == tem - 1 || position == tem - 2 || position == tem - 3 || position == tem - 4 ||
+                        position == tem - 5 || position == tem - 6 || position == tem - 7 || position == tem - 8 || position == tem + 8 || position == tem + 16 || position == tem + 24 || position == tem + 32 || position == tem + 40 || position == tem + 48 || position == tem + 56
+                        || position == tem - 8 || position == tem - 16 || position == tem + 24 || position == tem - 32 || position == tem - 40 || position == tem - 48 || position == tem - 56) {
+                        if (black_can_cut) {
+
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+
+
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+                } if (wqueen) {
+
+
+
+                    if (tem == 0 || tem == 8 || tem == 16 || tem == 24 ||
+                        tem == 32 || tem == 40 || tem == 48 || tem == 56) {
+                        if (position == tem - 7 || position == tem - 14 || position == tem - 21 || position == tem - 28 ||
+                            position == tem - 35 || position == tem - 42 || position == tem - 49 || position == tem + 9 || position == tem + 18 ||
+                            position == tem + 27 || position == tem + 36 || position == tem + 45 || position == tem + 53 || position == tem + 63 ||
+                            position == tem + 1 || position == tem + 2 || position == tem + 3 || position == tem + 4 ||
+                            position == tem + 5 || position == tem + 6 || position == tem + 7 || position == tem + 8 ||
+                            position == tem - 1 || position == tem - 2 || position == tem - 3 || position == tem - 4 ||
+                            position == tem - 5 || position == tem - 6 || position == tem - 7 || position == tem - 8 || position == tem + 8 || position == tem + 16 || position == tem + 24 || position == tem + 32 || position == tem + 40 || position == tem + 48 || position == tem + 56
+                            || position == tem - 8 || position == tem - 16 || position == tem + 24 || position == tem - 32 || position == tem - 40 || position == tem - 48 || position == tem - 56) {
+                            if (white_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                console.log("wqueen working")
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+
+                        }
+                        else {
+                            console.log("wqueen working")
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+                    else if (tem == 7 || tem == 15 || tem == 23 || tem == 31 ||
+                        tem == 39 || tem == 47 || tem == 55 || tem == 63) {
+                        if (position == tem + 7 || position == tem + 14 || position == tem + 21 || position == tem + 28 ||
+                            position == tem + 35 || position == tem + 42 || position == tem + 49 || position == tem - 9 || position == tem - 18 ||
+                            position == tem - 27 || position == tem - 36 || position == tem - 45 || position == tem - 53 || position == tem - 63 || position == tem + 1 || position == tem + 2 || position == tem + 3 || position == tem + 4 ||
+                            position == tem + 5 || position == tem + 6 || position == tem + 7 || position == tem + 8 ||
+                            position == tem - 1 || position == tem - 2 || position == tem - 3 || position == tem - 4 ||
+                            position == tem - 5 || position == tem - 6 || position == tem - 7 || position == tem - 8 || position == tem + 8 || position == tem + 16 || position == tem + 24 || position == tem + 32 || position == tem + 40 || position == tem + 48 || position == tem + 56
+                            || position == tem - 8 || position == tem - 16 || position == tem + 24 || position == tem - 32 || position == tem - 40 || position == tem - 48 || position == tem - 56) {
+                            if (white_can_cut) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+                            else if (!parent.firstChild) {
+                                parent.appendChild(selectedcoin);
+                                moveFlag = false;
+
+                            }
+
+
+                            else {
+                                console.log("wqueen is working")
+                                firststparent.appendChild(selectedcoin);
+                                moveFlag = false;
+                            }
+
+                        }
+                        else {
+                            console.log("wqueen its working")
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                    }
+
+
+
+
+                    else if (position == tem - 7 || position == tem - 14 || position == tem - 21 || position == tem - 28 ||
+                        position == tem - 35 || position == tem - 42 || position == tem - 49 || position == tem - 9 || position == tem - 18 ||
+                        position == tem - 27 || position == tem - 36 || position == tem - 45 || position == tem - 53 || position == tem - 63 ||
+                        position == tem + 7 || position == tem + 14 || position == tem + 21 || position == tem + 28 ||
+                        position == tem + 35 || position == tem + 42 || position == tem + 49 || position == tem + 9 || position == tem + 18 ||
+                        position == tem + 27 || position == tem + 36 || position == tem + 45 || position == tem + 53 || position == tem + 63 || position == tem + 1 || position == tem + 2 || position == tem + 3 || position == tem + 4 ||
+                        position == tem + 5 || position == tem + 6 || position == tem + 7 || position == tem + 8 ||
+                        position == tem - 1 || position == tem - 2 || position == tem - 3 || position == tem - 4 ||
+                        position == tem - 5 || position == tem - 6 || position == tem - 7 || position == tem - 8 || position == tem + 8 || position == tem + 16 || position == tem + 24 || position == tem + 32 || position == tem + 40 || position == tem + 48 || position == tem + 56
+                        || position == tem - 8 || position == tem - 16 || position == tem + 24 || position == tem - 32 || position == tem - 40 || position == tem - 48 || position == tem - 56) {
+
+                        if (white_can_cut) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+                        else if (!parent.firstChild) {
+                            parent.appendChild(selectedcoin);
+                            moveFlag = false;
+
+                        }
+
+
+                        else {
+                            firststparent.appendChild(selectedcoin);
+                            moveFlag = false;
+                        }
+
+                    }
+
+                }
+
+
+            }
+
+        }
+    </script>
+
+
+</body>
+
+</html>
